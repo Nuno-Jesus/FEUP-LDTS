@@ -1,0 +1,43 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'info.solidsoft.pitest' version '1.6.0'
+    id "org.kordamp.gradle.errorprone" version "0.47.0"
+}
+
+group 'g1001'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    testImplementation 'org.mockito:mockito-core:3.+'
+    implementation group: 'com.googlecode.lanterna', name: 'lanterna', version: '3.1.1'
+    errorprone("com.google.errorprone:error_prone_core:0.47.0")
+}
+
+test {
+    useJUnitPlatform()
+}
+
+application{
+    mainClass.set("g1001.Application")
+}
+
+pitest {
+    junit5PluginVersion = '0.15'
+    pitestVersion = '1.6.7'
+    excludedClasses = ['g1001.Application', 'g1001.Elements.Fixed.Wall', 'g1001.Elements.Fixed.FixedElement',
+                       'g1001.Elements.Fixed.Collectables.Fruit', 'g1001.Elements.Fixed.Collectables.Pellet',
+                       'g1001.Elements.Fixed.Collectables.PowerUp', 'g1001.Elements.Moving.Ghosts.ScaredGhost',
+                       'g1001.Elements.Moving.Ghosts.Ghost']
+    verbose = true
+}
+
+
+
+
