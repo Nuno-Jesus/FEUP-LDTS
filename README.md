@@ -5,7 +5,7 @@ This repository contains code developed by [me](https://sigarra.up.pt/feup/pt/fe
 
 ## Project
 
-|Complexity (0-1)|Code (0-2)|Architecture (0-2)|Tests (0-2)|Report (0-1)|Processes (0-2)|Group Grade|
+|Complexity (1)|Code (2)|Architecture (2)|Tests (2)|Report (1)|Processes (2)|Group Grade|
 |:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
 |0.90|2.00|1.80|1.30|0.95|1.70|17.3|
 
